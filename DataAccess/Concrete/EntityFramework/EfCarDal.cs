@@ -17,19 +17,12 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (CarProjectContext context = new CarProjectContext())
             {
-                var result = from c in context.Cars.Where(c => c.Id == carId)
-                    join co in context.Colors
-                        on c.ColorId equals co.Id
-                    join b in context.Brands
-                        on c.BrandId equals b.Id
+                var result = from car in context.Cars.Where(c => c.Id == carId)
+                    join color in context.Colors on car.ColorId equals color.Id
+                    join brand in context.Brands on car.BrandId equals brand.Id
                     select new CarDetailDto
                     {
-                        BrandName = b.Name,
-                        ColorName = c.ColorName,
-                        DailyPrice = c.DailyPrice,
-                        Description = c.Description,
-                        ModelYear = c.ModelYear,
-                        Id = c.Id
+                        Id = car.Id,
                     };
                 return result.SingleOrDefault();
             }
@@ -49,7 +42,7 @@ namespace DataAccess.Concrete.EntityFramework
                         Id = ca.Id,
                         BrandId = b.Id,
                         ColorId = co.Id,
-                        Name = ca.ModelName,
+                        ModelName = ca.ModelName,
                         BrandName = b.Name,
                         ColorName = co.Name,
                         ModelYear = ca.ModelYear,
