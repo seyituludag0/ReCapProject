@@ -127,6 +127,9 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        
+        public IDataResult<CarDetailDto> GetCarDetail(int carId)
+        {
+            return new SuccessDataResult<CarDetailDto>(_carDal.GetCarDetail(carId), Messages.GetCarDetailMessage);
+        }
     }
 }

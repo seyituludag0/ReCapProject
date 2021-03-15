@@ -89,7 +89,7 @@ namespace DataAccess.Concrete.InMemoryCarDal
             throw new NotImplementedException();
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public CarDetailDto GetCarDetail(int carId)
         {
             throw new NotImplementedException();
         }
