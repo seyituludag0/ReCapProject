@@ -17,7 +17,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (CarProjectContext context = new CarProjectContext())
             {
-                var result = from c in context.Cars.Where(p => p.Id == carId)
+                var result = from c in context.Cars.Where(c => c.Id == carId)
                     join co in context.Colors
                         on c.ColorId equals co.Id
                     join b in context.Brands
