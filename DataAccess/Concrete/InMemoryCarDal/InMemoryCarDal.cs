@@ -84,6 +84,11 @@ namespace DataAccess.Concrete.InMemoryCarDal
             Console.WriteLine("Araç Silindi");
         }
 
+        public List<CarDetailDto> GetCarsDetail()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<CarDetailDto> GetCarDetails()
         {
             throw new NotImplementedException();

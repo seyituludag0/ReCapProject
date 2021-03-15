@@ -19,7 +19,7 @@ namespace Business.Constants
         public static string ErrorCarUpdated = "Araba güncellenemedi";
         public static string CarGet = "Araba getirildi";
         public static string GetCarsByBrandIdMessage = "Arabalar Brand Id ye göre listelenmiştir";
-        public static string GetCarDetailsMessage = "Araba detayları getirildi";
+        public static string GetCarsDetailMessage = "Araba detayları getirildi";
         public static string GetUnitPriceMessage = "Arabalar günlük fiyata göre listelenmiştir";
         public static string CarNameAlreadyExists = "Aynı modelde araç var zaten";
 
