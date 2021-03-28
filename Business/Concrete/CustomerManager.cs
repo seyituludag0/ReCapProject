@@ -47,11 +47,21 @@ namespace Business.Concrete
         public IDataResult<Customer> Get(int id)
         {
             Customer customer = _customerDal.Get(c => c.Id == id);
-            if (customer==null)
+            if (customer == null)
             {
                 return new ErrorDataResult<Customer>(Messages.CustomerGet);
             }
-            return new SuccessDataResult<Customer>(customer,Messages.CustomerGet);
+            return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
+        }
+
+        public IDataResult<Customer> GetByUserId(int userId)
+        {
+            Customer customer = _customerDal.Get(c => c.UserId == userId);
+            if (customer == null)
+            {
+                return new ErrorDataResult<Customer>(Messages.CustomerGet);
+            }
+            return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
         }
 
         [ValidationAspect(typeof(CustomerValidator))]

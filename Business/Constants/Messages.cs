@@ -32,7 +32,7 @@ namespace Business.Constants
         public static string ErrorCustomerListed = "Müşterilar listelenemedi";
         //public static string ErrorDelete = "Müşteri silinemedi";
         public static string SuccessCustomerDelete = "Müşteri silindi";
-        public static string SuccessCustomerUpdated = "Müşteri güncellendi";
+        public static string SuccessCustomerUpdated = "Müşteri bilgileri güncellendi";
         public static string ErrorUpdated = "Müşteri güncellenemedi";
         public static string CustomerGet = "Müşteri getirildi";
         public static string GetCustomerDetailsMessage = "Müşteri detayları getirildi";
@@ -96,5 +96,6 @@ namespace Business.Constants
         public static string PaymentAdded = "Ödeme başarıyla kaydedildi";
         public static string GetErrorCarMessage="Araç bilgisi / bilgileri getirilemedi.";
         public static string RentalDetails="Kiralama bilgileri getirildi";
+        public static string ChangedPassword = "Şifre değiştirildi";
     }
 }
