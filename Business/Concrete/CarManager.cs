@@ -97,7 +97,7 @@ namespace Business.Concrete
             }
         }
 
-        [SecuredOperation("admin,car.add")]
+        [SecuredOperation("admin,add")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Add(Car car)
@@ -111,7 +111,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarAdded);
         }
 
-        //[SecuredOperation("admin,car.update")]
+        [SecuredOperation("admin,update")]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Update(Car car)
         {
@@ -124,7 +124,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DailyPriceInvalid);
         }
 
-        [SecuredOperation("admin,car.delete")]
+        [SecuredOperation("admin,delete")]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Delete(Car car)
         {

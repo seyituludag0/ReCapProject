@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Business.Abstract;
 using Business.Business;
+using Business.BusinessAspects;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
@@ -23,6 +24,7 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
+        [SecuredOperation("admin, add")]
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color color)
         {
@@ -35,6 +37,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ColorAdded);
         }
 
+        [SecuredOperation("admin, delete")]
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
@@ -63,6 +66,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Color>(_colorDal.Get(b => b.Id == id), Messages.GetColorByIdMessage);
         }
 
+        [SecuredOperation("admin, update")]
         public IResult Update(Color color)
         {
             if (color.Name.Length < 2)

@@ -42,7 +42,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(CheckIfCarImageNull(carId));
         }
 
-        //[SecuredOperation("admin")]
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
@@ -79,9 +79,6 @@ namespace Business.Concrete
             _carImageDal.Delete(carImage);
             return new SuccessResult();
         }
-
-
-
 
         private IResult CheckImageLimitExceeded(int carid)
         {
