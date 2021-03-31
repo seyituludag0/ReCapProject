@@ -92,7 +92,6 @@ namespace WebAPI.Controllers
         [HttpGet("getcustomerdetails")]
         public IActionResult GetRentalDetailDto()
         {
-            // Thread.Sleep(5000);
             var result = _customerService.GetCustomerDetailsDto();
             if (result.Success)
             {
