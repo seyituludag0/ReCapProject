@@ -29,8 +29,8 @@ namespace Business.Concrete
 
         public IResult CheckPayment(Payment payment)
         {
-            var paymentToCheck = _paymentDal.GetAll(p => p.CardNumber == payment.CardNumber &&
-                                                         p.CVV == payment.CVV &&
+            var paymentToCheck = _paymentDal.GetAll(p => p.CardNumber == payment.CardNumber ||
+                                                         p.CVV == payment.CVV ||
                                                          p.ExpirationDate == payment.ExpirationDate).Any();
             if (paymentToCheck)
             {
