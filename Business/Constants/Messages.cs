@@ -38,13 +38,13 @@ namespace Business.Constants
         public static string GetCustomerDetailsMessage = "Müşteri detayları getirildi";
 
         //Rental Message
-        public static string RentalAddedError = "Rental eklenemedi";
-        public static string RentalAdded = "Rental eklendi";
-        public static string GetAllRental = "Rental listelendi";
-        public static string RentalUpdate = "Rental güncellendi";
-        public static string RentalDelete = "Rental silindi";
-        public static string GetRentalDto = "Rental bilgileri getirildi";
-        public static string GetRentalById = "Rental getirildi";
+        public static string RentalAddedError = "Kiralanamadı";
+        public static string RentalAdded = "Kiralandı";
+        public static string GetAllRental = "Kiralıklar listelendi";
+        public static string RentalUpdate = "Kira güncellendi";
+        public static string RentalDelete = "Kira silindi";
+        public static string GetRentalDto = "Kira bilgileri getirildi";
+        public static string GetRentalById = "Kira getirildi";
 
         //User Message
         public static string UserAdded = "Kullanıcı eklendi";
@@ -97,5 +97,8 @@ namespace Business.Constants
         public static string GetErrorCarMessage="Araç bilgisi / bilgileri getirilemedi.";
         public static string RentalDetails="Kiralama bilgileri getirildi";
         public static string ChangedPassword = "Şifre değiştirildi";
+
+        //Card
+        public static string CardAdded = "Kart bilgileri kaydedildi";
     }
 }

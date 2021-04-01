@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal:EfEntityRepositoryBase<Car,CarProjectContext>,ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, CarProjectContext>, ICarDal
     {
         public CarDetailDto GetCarDetail(int carId)
         {
@@ -32,9 +32,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  ModelYear = car.ModelYear,
                                  DailyPrice = car.DailyPrice,
                                  Description = car.Description,
-                                 ImagePath = (from ci in context.CarImages where ci.CarId == carId select ci.ImagePath).ToList()
-
-
+                                 ImagePath = (from ci in context.CarImages where ci.CarId == carId select ci.ImagePath).ToList(),
                              };
                 return result.SingleOrDefault();
             }
@@ -50,20 +48,21 @@ namespace DataAccess.Concrete.EntityFramework
             using (CarProjectContext context = new CarProjectContext())
             {
                 var result = from c in filter == null ? context.Cars : context.Cars.Where(filter)
-                    join co in context.Colors on c.ColorId equals co.Id
-                    join b in context.Brands on c.BrandId equals b.Id
-                    select new CarDetailDto
-                    {
-                        BrandName = b.Name,
-                        ColorName = co.Name,
-                        DailyPrice = c.DailyPrice,
-                        Description = c.Description,
-                        ModelYear = c.ModelYear,
-                        ModelName = c.ModelName,
-                        Id = c.Id,
-                        BrandId = b.Id,
-                        ColorId = co.Id,
-                    };
+                             join co in context.Colors on c.ColorId equals co.Id
+                             join b in context.Brands on c.BrandId equals b.Id
+                             select new CarDetailDto
+                             {
+                                 BrandName = b.Name,
+                                 ColorName = co.Name,
+                                 DailyPrice = c.DailyPrice,
+                                 Description = c.Description,
+                                 ModelYear = c.ModelYear,
+                                 ModelName = c.ModelName,
+                                 Id = c.Id,
+                                 BrandId = b.Id,
+                                 ColorId = co.Id,
+                                 Status = !(context.Rentals.Any(r => r.CarId == c.Id && (r.ReturnDate == null || r.ReturnDate > DateTime.Now)))
+                             };
                 return result.ToList();
             }
         }
