@@ -24,6 +24,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CardAdded);
         }
 
+        public IResult Delete(CardDetail cardDetail)
+        {
+            _cardDetailDal.Delete(cardDetail);
+            return new SuccessResult(Messages.CardDelete);
+        }
+
         public IDataResult<List<CardDetail>> GetCardsByUserId(int userId)
         {
             return new SuccessDataResult<List<CardDetail>>(_cardDetailDal.GetAll(c=>c.UserId==userId));

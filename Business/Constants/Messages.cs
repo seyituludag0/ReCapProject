@@ -100,5 +100,6 @@ namespace Business.Constants
 
         //Card
         public static string CardAdded = "Kart bilgileri kaydedildi";
+        public static string CardDelete= "Kart bilgileri silindi";
     }
 }
