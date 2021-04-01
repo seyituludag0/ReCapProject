@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpPost("getcardsbyuserid")]
+        [HttpGet("getcardsbyuserid")]
         public IActionResult GetCardsByUserId(int userId)
         {
             var result = _cardDetailService.GetCardsByUserId(userId);

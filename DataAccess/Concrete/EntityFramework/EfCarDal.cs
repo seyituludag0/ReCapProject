@@ -36,11 +36,6 @@ namespace DataAccess.Concrete.EntityFramework
                              };
                 return result.SingleOrDefault();
             }
-
-
-
-
-
         }
 
         public List<CarDetailDto> GetCarsDetail(Expression<Func<Car, bool>> filter = null)
