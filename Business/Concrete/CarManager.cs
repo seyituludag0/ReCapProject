@@ -164,6 +164,9 @@ namespace Business.Concrete
             return new SuccessDataResult<CarDetailDto>(_carDal.GetCarDetail(carId), Messages.GetCarDetailMessage);
         }
 
-
+        public IDataResult<Car> GetCarMinFindex(int carId)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(c=>c.Id==carId));
+        }
     }
 }

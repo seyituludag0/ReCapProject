@@ -18,5 +18,6 @@ namespace Entities.Dtos
         public string Description { get; set; }
         public List<string> ImagePath { get; set; }
         public bool Status { get; set; }
+        public int MinFindex { get; set; }
     }
 }

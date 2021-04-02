@@ -97,5 +97,17 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
+
+        [HttpGet("getuserfindexbyuserid")]
+        public IActionResult GetUserFindexByUserId(int userId)
+        {
+            var result = _userService.GetUserFindexByUserId(userId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
     }
 }

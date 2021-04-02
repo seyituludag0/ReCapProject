@@ -83,5 +83,10 @@ namespace Business.Concrete
             Update(userToUpdate);
             return new SuccessResult(Messages.UserUpdated);
         }
+
+        public IDataResult<User> GetUserFindexByUserId(int userId)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u=>u.Id==userId));
+        }
     }
 }
