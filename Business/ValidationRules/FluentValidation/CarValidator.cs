@@ -21,6 +21,8 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.Description).NotEmpty();
             RuleFor(c => c.ColorId).NotEmpty();
             RuleFor(c => c.BrandId).NotEmpty();
+            RuleFor(c => c.MinFindex);
+
         }
 
     }

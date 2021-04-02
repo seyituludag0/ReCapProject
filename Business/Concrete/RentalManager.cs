@@ -69,8 +69,22 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
             IResult result = BusinessRules.Run(CheckIfReturnDateNull(rental.CarId));
+            if (result != null)
+            {
+                return result;
+            }
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
+        }
+
+        private IResult CheckIfReturnDateNull(int carId)
+        {
+            var result = _rentalDal.GetAll(r => r.CarId == carId && r.ReturnDate == null);
+            if (result.Count > 0)
+            {
+                return new ErrorResult(Messages.RentalAddedError);
+            }
+            return new SuccessResult();
         }
 
         public IResult Update(Rental rental)
@@ -85,15 +99,8 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalDelete);
         }
 
-        private IResult CheckIfReturnDateNull(int carId)
-        {
-            var result = _rentalDal.Get(r => r.CarId == carId && r.ReturnDate == null);
-            if (result != null)
-            {
-                return new ErrorResult(Messages.RentalAddedError);
-            }
-            return new SuccessResult();
-        }
+        
+
     }
     
 }

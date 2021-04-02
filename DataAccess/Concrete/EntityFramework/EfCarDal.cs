@@ -34,6 +34,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  Description = car.Description,
                                  MinFindex = car.MinFindex,
                                  ImagePath = (from ci in context.CarImages where ci.CarId == carId select ci.ImagePath).ToList(),
+                                 Status = !(context.Rentals.Any(r => r.CarId == car.Id && (r.ReturnDate == null || r.ReturnDate > DateTime.Now))),
+
                              };
                 return result.SingleOrDefault();
             }
@@ -58,7 +60,6 @@ namespace DataAccess.Concrete.EntityFramework
                                  BrandId = b.Id,
                                  ColorId = co.Id,
                                  MinFindex = c.MinFindex,
-                                 Status = !(context.Rentals.Any(r => r.CarId == c.Id && (r.ReturnDate == null || r.ReturnDate > DateTime.Now)))
                              };
                 return result.ToList();
             }
