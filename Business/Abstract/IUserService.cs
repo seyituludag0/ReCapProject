@@ -18,5 +18,6 @@ namespace Business.Abstract
         IDataResult<User> GetByMail(string email);
         IResult UpdateInfo(User user);
         IDataResult<User> GetUserFindexByUserId(int userId);
+        IResult UpdateUserFindex(int userId);
     }
 }

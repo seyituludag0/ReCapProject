@@ -88,5 +88,13 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<User>(_userDal.Get(u=>u.Id==userId));
         }
+
+        public IResult UpdateUserFindex(int userId)
+        {
+            var userUpdateFindex = _userDal.Get(u => u.Id == userId);
+            userUpdateFindex.Findex += 200;
+            _userDal.Update(userUpdateFindex);
+            return new SuccessResult();
+        }
     }
 }
