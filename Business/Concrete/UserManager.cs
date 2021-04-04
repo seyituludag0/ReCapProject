@@ -94,7 +94,7 @@ namespace Business.Concrete
             var userUpdateFindex = _userDal.Get(u => u.Id == userId);
             userUpdateFindex.Findex += 200;
             _userDal.Update(userUpdateFindex);
-            return new SuccessResult();
+            return new SuccessResult(Messages.EarnedFindex);
         }
     }
 }

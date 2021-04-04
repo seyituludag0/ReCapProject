@@ -113,7 +113,7 @@ namespace WebAPI.Controllers
         [HttpGet("updateuserfindex")]
         public IActionResult UpdateUserFindex(int id)
         {
-            var result = _userService.GetUserFindexByUserId(id);
+            var result = _userService.UpdateUserFindex(id);
             if (result.Success)
             {
                 return Ok(result);
