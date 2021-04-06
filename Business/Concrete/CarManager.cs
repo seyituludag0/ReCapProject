@@ -97,18 +97,29 @@ namespace Business.Concrete
             }
         }
 
+        //[SecuredOperation("admin")]
+        //[ValidationAspect(typeof(CarValidator))]
+        //[CacheRemoveAspect("ICarService.Get")]
+        //public IResult Add(Car car)
+        //{
+        //    IResult result = BusinessRules.Run(CheckIfCarNameExists(car.ModelName));
+        //    if (result != null)
+        //    {
+        //        return result;
+        //    }
+        //    _carDal.Add(car);
+        //    return new SuccessResult(Messages.CarAdded);
+        //}
+
+
         [SecuredOperation("admin")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
-        public IResult Add(Car car)
+        public IDataResult<Car> Add(Car car)
         {
-            IResult result = BusinessRules.Run(CheckIfCarNameExists(car.ModelName));
-            if (result != null)
-            {
-                return result;
-            }
+           
             _carDal.Add(car);
-            return new SuccessResult(Messages.CarAdded);
+            return new SuccessDataResult<Car>(car,Messages.CarAdded);
         }
 
         [SecuredOperation("admin,update")]
