@@ -14,6 +14,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCarDal : EfEntityRepositoryBase<Car, CarProjectContext>, ICarDal
     {
+        //getcardetail
         public CarDetailDto GetCarDetail(int carId)
         {
             using (CarProjectContext context = new CarProjectContext())
@@ -60,6 +61,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  BrandId = b.Id,
                                  ColorId = co.Id,
                                  MinFindex = c.MinFindex,
+                                 ImagePath = (from ci in context.CarImages where ci.CarId == c.Id select ci.ImagePath).ToList()
                              };
                 return result.ToList();
             }
