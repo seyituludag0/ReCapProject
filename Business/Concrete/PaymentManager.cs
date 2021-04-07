@@ -34,11 +34,11 @@ namespace Business.Concrete
                                                          p.ExpirationDate == payment.ExpirationDate).Any();
             if (paymentToCheck)
             {
-                return new SuccessResult("Succeeded");
+                return new SuccessResult(Messages.PaymentSuccessful);
             }
             else
             {
-                return new ErrorResult("PaymentError");
+                return new ErrorResult(Messages.PaymentError);
             }
         }
     }

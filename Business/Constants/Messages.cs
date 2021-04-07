@@ -101,5 +101,7 @@ namespace Business.Constants
         public static string CardAdded = "Kart bilgileri kaydedildi";
         public static string CardDelete= "Kart bilgileri silindi";
         public static string EarnedFindex="Findex puan kazandınız";
+        public static string PaymentSuccessful = "Ödeme başarılı";
+        public static string PaymentError = "Ödeme başarısız";
     }
 }
