@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -110,7 +111,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("updateuserfindex")]
+        [HttpPost("updateuserfindex")]
         public IActionResult UpdateUserFindex(int id)
         {
             var result = _userService.UpdateUserFindex(id);
@@ -118,8 +119,11 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
+            else
+            {
+                return BadRequest(result);
+            }
 
-            return BadRequest(result);
         }
     }
 }

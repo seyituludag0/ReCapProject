@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class PaymentsController : ControllerBase
     {
-        IPaymentService _paymentService;
+        private IPaymentService _paymentService;
 
         public PaymentsController(IPaymentService paymentService)
         {
@@ -41,11 +41,5 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-
-
-
-
-
-
     }
 }

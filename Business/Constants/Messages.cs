@@ -13,7 +13,6 @@ namespace Business.Constants
         public static string CarListed = "Arabalar listelendi";
         public static string ErrorCarListed = "Arabalar listelenemedi";
         public static string DailyPriceInvalid = "Geçersiz fiyat";
-        //public static string ErrorDelete = "Araba silinemedi";
         public static string SuccessCarDelete = "Araba silindi";
         public static string SuccessCarUpdated = "Araba güncellendi";
         public static string ErrorCarUpdated = "Araba güncellenemedi";
