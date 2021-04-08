@@ -42,11 +42,11 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public List<CarDetailDto> GetCarsDetail(Expression<Func<Car, bool>> filter = null)
+        public List<CarDetailDto> GetCarsDetail(Expression<Func<CarDetailDto, bool>> filter = null)
         {
             using (CarProjectContext context = new CarProjectContext())
             {
-                var result = from c in filter == null ? context.Cars : context.Cars.Where(filter)
+                var result = from c in context.Cars 
                              join co in context.Colors on c.ColorId equals co.Id
                              join b in context.Brands on c.BrandId equals b.Id
                              select new CarDetailDto
@@ -63,7 +63,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  MinFindex = c.MinFindex,
                                  ImagePath = (from ci in context.CarImages where ci.CarId == c.Id select ci.ImagePath).ToList()
                              };
-                return result.ToList();
+                return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
         }
 
