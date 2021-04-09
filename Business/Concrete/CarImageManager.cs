@@ -61,10 +61,15 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Update(IFormFile file, CarImage carImage)
         {
-            carImage.ImagePath = FileHelper.Update(_carImageDal.Get(p => p.Id == carImage.Id).ImagePath, file);
+            IResult result = BusinessRules.Run(CheckImageLimitExceeded(carImage.CarId));
+            if (result != null)
+            {
+                return result;
+            }
             carImage.Date = DateTime.Now;
-            _carImageDal.Update(carImage);
-            return new SuccessResult();
+            string oldPath = Get(carImage.Id).Data.ImagePath;
+            carImage.ImagePath = FileHelper.Update(oldPath, file);
+            return new SuccessResult(Messages.CarImageUpdated);
         }
 
         [SecuredOperation("admin")]

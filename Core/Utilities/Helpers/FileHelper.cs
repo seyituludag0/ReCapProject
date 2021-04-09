@@ -32,23 +32,13 @@ namespace Core.Utilities.Helpers
         {
             File.Delete(path);
         }
-        public static string Update(string sourcePath, IFormFile file)
+        public static string Update(string oldPath, IFormFile file)
         {
-            var result = NewPath(file.FileName);
-            if (sourcePath.Length > 0)
-            {
-                using (var stream = new FileStream(result, FileMode.Create))
-                {
-                    file.CopyTo(stream);
-                }
-            }
-            File.Delete(sourcePath);
-            return result;
+           Delete(oldPath);
+           return Add(file);
         }
         public static string NewPath(string file)
         {
-            
-
             string path = Environment.CurrentDirectory + @"\wwwroot\uploads\carImages";
 
             string result = $@"{path}\{file}";
