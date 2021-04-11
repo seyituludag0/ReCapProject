@@ -28,7 +28,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        [CacheAspect]
+        //[CacheAspect]
         [CacheRemoveAspect("ICarService.Get")]
         public IDataResult<List<Car>> GetAll()
         {
