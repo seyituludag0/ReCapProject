@@ -65,6 +65,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(rentals, Messages.GetAllRental);
         }
 
+
         [ValidationAspect(typeof(RentalValidator))]
         public IResult Add(Rental rental)
         {
