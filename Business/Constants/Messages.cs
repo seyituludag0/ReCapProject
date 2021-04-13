@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Entities.Dtos;
 
 namespace Business.Constants
 {
@@ -103,5 +104,6 @@ namespace Business.Constants
         public static string EarnedFindex="Findex puan kazandınız";
         public static string PaymentSuccessful = "Ödeme başarılı";
         public static string PaymentError = "Ödeme başarısız";
+        public static string NoRentACar="Kiralık Araç yok";
     }
 }

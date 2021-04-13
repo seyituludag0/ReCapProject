@@ -46,7 +46,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (CarProjectContext context = new CarProjectContext())
             {
-                var result = from c in context.Cars 
+                var result = from c in context.Cars
                              join co in context.Colors on c.ColorId equals co.Id
                              join b in context.Brands on c.BrandId equals b.Id
                              select new CarDetailDto
@@ -66,6 +66,5 @@ namespace DataAccess.Concrete.EntityFramework
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
         }
-
     }
 }

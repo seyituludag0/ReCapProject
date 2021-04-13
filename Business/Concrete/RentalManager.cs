@@ -100,8 +100,15 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalDelete);
         }
 
-        
-
+        public IDataResult<List<RentalDetailDto>> GetRentalDetailsByCustomerId(int customerId)
+        {
+            List<RentalDetailDto> rentals = _rentalDal.GetRentalDetailsDto(c=>c.CustomerId==customerId);
+            if (rentals == null)
+            {
+                return new ErrorDataResult<List<RentalDetailDto>>(Messages.NoRentACar);
+            }
+            return new SuccessDataResult<List<RentalDetailDto>>(rentals,Messages.GetAllRental);
+        }
     }
     
 }

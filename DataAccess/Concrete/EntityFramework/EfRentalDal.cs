@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfRentalDal:EfEntityRepositoryBase<Rental,CarProjectContext>,IRentalDal
     {
-        public List<RentalDetailDto> GetRentalDetails(Expression<Func<Rental, bool>> filter = null)
+        public List<RentalDetailDto> GetRentalDetails(Expression<Func<RentalDetailDto, bool>> filter = null)
         {
             using (CarProjectContext context = new CarProjectContext())
             {
@@ -26,7 +26,7 @@ namespace DataAccess.Concrete.EntityFramework
                     {
                        Id = rental.Id,
                        BrandName = br.Name,
-                       CarName = ca.ModelName,
+                       ModelName = ca.ModelName,
                        ModelYear = ca.ModelYear,
                         DailyPrice = ca.DailyPrice,
                         Description = ca.Description,
@@ -36,9 +36,40 @@ namespace DataAccess.Concrete.EntityFramework
                        LastName = us.LastName,
                        RentDate = rental.RentDate,
                        ReturnDate = rental.ReturnDate,
+                       CustomerId = cu.Id
                        
                     };
-                return result.ToList();
+                return filter == null ? result.ToList() : result.Where(filter).ToList();
+            }
+        }
+        public List<RentalDetailDto> GetRentalDetailsDto(Expression<Func<RentalDetailDto, bool>> filter = null)
+        {
+            using (CarProjectContext context = new CarProjectContext())
+            {
+                var result = from rental in context.Rentals
+                    join ca in context.Cars on rental.CarId equals ca.Id
+                    join co in context.Colors on ca.ColorId equals co.Id
+                    join br in context.Brands on ca.BrandId equals br.Id
+                    join cu in context.Customers on rental.CustomerId equals cu.Id
+                    join us in context.Users on cu.UserId equals us.Id
+                    select new RentalDetailDto
+                    {
+                        Id = rental.Id,
+                        BrandName = br.Name,
+                        ModelName = ca.ModelName,
+                        ModelYear = ca.ModelYear,
+                        DailyPrice = ca.DailyPrice,
+                        Description = ca.Description,
+                        ColorName = co.Name,
+                        CompanyName = cu.CompanyName,
+                        FirstName = us.FirstName,
+                        LastName = us.LastName,
+                        RentDate = rental.RentDate,
+                        ReturnDate = rental.ReturnDate,
+                        CustomerId = cu.Id
+
+                    };
+                return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
         }
     }
