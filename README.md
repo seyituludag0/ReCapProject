@@ -11,3 +11,7 @@ Bu projede ele araç kiralama sistemi ele alınmıştır.
 Bu katman abstract(soyut) ve concrete(somut) klasörleri olmak üzere 2 ana klasörden oluşmaktadır. <br/>
 ![Business](https://user-images.githubusercontent.com/76704724/115155133-2f541200-a087-11eb-9379-23b4b0b7144e.PNG)
 
+# Business Katmanı Klasörleri
+Abstract, Business, Business Aspects, Concrete, Constants, DependencyResolvers, Autofac Klasörleri
+![BusinessLayer](https://user-images.githubusercontent.com/76704724/115155212-8b1e9b00-a087-11eb-9ace-069370bf12be.PNG)
+
