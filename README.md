@@ -9,5 +9,5 @@ Bu projede ele araç kiralama sistemi ele alınmıştır.
 
 # Business Katmanı
 Bu katman abstract(soyut) ve concrete(somut) klasörleri olmak üzere 2 ana klasörden oluşmaktadır. <br/>
-![Business](https://user-images.githubusercontent.com/76704724/115155089-f87dfc00-a086-11eb-8ee4-104483db2edd.PNG)
+![Business](https://user-images.githubusercontent.com/76704724/115155133-2f541200-a087-11eb-9379-23b4b0b7144e.PNG)
 
