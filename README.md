@@ -31,8 +31,8 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Kat
 
 ## Entities Katmanı
 
-Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.
-![EntitiesLayer](https://user-images.githubusercontent.com/76704724/115159584-8c0df780-a09c-11eb-937e-ed861a850ddc.PNG) <br/>
+Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur. <br/>
+![EntitiesLayer](https://user-images.githubusercontent.com/76704724/115159584-8c0df780-a09c-11eb-937e-ed861a850ddc.PNG)  <br/>
 
 ## UIConsole Katmanı
 Kodların doğru çalıştığını görmek için kullandığımız katman test katmanı da diyebiliriz.
