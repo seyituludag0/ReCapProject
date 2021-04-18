@@ -35,7 +35,7 @@ Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Con
 ![EntitiesLayer](https://user-images.githubusercontent.com/76704724/115159584-8c0df780-a09c-11eb-937e-ed861a850ddc.PNG)  <br/>
 
 ## UIConsole Katmanı
-Kodların doğru çalıştığını görmek için kullandığımız katman test katmanı da diyebiliriz.
+Kodların doğru çalıştığını görmek için kullandığımız katman test katmanı da diyebiliriz. <br/>
 ![UIConsoleLayer](https://user-images.githubusercontent.com/76704724/115159792-8bc22c00-a09d-11eb-8265-31fdeede771c.PNG) <br/>
 
 
