@@ -32,11 +32,11 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-      
-        [HttpGet("getbyuserid")]
-        public IActionResult GetByUserId(int id)
+
+        [HttpGet("getcustomerbyuserid")]
+        public IActionResult GetCustomerByUserId(int id)
         {
-            var result = _customerService.GetByUserId(id);
+            var result = _customerService.GetCustomerByUserId(id);
             if (result.Success)
             {
                 return Ok(result);

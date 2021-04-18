@@ -54,15 +54,17 @@ namespace Business.Concrete
             return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
         }
 
-        public IDataResult<Customer> GetByUserId(int userId)
+        public IDataResult<Customer> GetCustomerByUserId(int userId)
         {
             Customer customer = _customerDal.Get(c => c.UserId == userId);
             if (customer == null)
             {
-                return new ErrorDataResult<Customer>(Messages.CustomerGet);
+                return new ErrorDataResult<Customer>(Messages.CustomerGetError);
             }
             return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
         }
+
+       
 
         [ValidationAspect(typeof(CustomerValidator))]
         public IResult Add(Customer customer)

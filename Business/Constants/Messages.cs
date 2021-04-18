@@ -35,6 +35,7 @@ namespace Business.Constants
         public static string SuccessCustomerUpdated = "Müşteri bilgileri güncellendi";
         public static string ErrorUpdated = "Müşteri güncellenemedi";
         public static string CustomerGet = "Müşteri getirildi";
+        public static string CustomerGetError = "Müşteri bulunamadı";
         public static string GetCustomerDetailsMessage = "Müşteri detayları getirildi";
 
         //Rental Message
