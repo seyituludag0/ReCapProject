@@ -25,5 +25,5 @@ Bir framework katmanı olan Core Katmanı'nda DataAccess, Entities, Utilities ol
 ![CoreDataAccess](https://user-images.githubusercontent.com/76704724/115156192-bf945600-a08b-11eb-9dc9-8dbf418ae00d.PNG) <br/>
 
 # Data Access Katmanı
-Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.
+Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü ise somut nesneleri tutmak için oluşturulmuştur.
 ![DataAccessLayer](https://user-images.githubusercontent.com/76704724/115159433-bf03bb80-a09b-11eb-9d8a-c7ec8a9e986e.PNG) <br/>
