@@ -42,6 +42,6 @@ Kodların doğru çalıştığını görmek için kullandığımız katman test 
 ## WepAPI Katmanı
 Tüm kodların birleşip web sayfasına yansıtıldığı katmandır <br/>
 ![WebApiLayer](https://user-images.githubusercontent.com/76704724/115159854-e52a5b00-a09d-11eb-8e2f-c9be0a9b8a79.PNG) <br/>
-![WebApiLayer01](https://user-images.githubusercontent.com/76704724/115160684-39373e80-a0a2-11eb-99ae-28d6da56d390.PNG)
+![WebApiLayer01](https://user-images.githubusercontent.com/76704724/115160775-bebaee80-a0a2-11eb-92c6-df6529b895ea.PNG)
 
 
