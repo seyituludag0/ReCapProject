@@ -7,7 +7,6 @@ using Business.Abstract;
 using Business.Concrete;
 using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.Concrete.InMemoryCarDal;
 using Entities.Concrete;
 
 namespace UIConsole
@@ -16,7 +15,7 @@ namespace UIConsole
     {
         static void Main(string[] args)
         {
-            //CarTest();
+            CarTest();
             //BrandTest();
             //ColorTest();
             //CustomerTest();
