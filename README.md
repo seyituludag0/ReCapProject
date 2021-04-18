@@ -14,4 +14,4 @@ Bu katman abstract(soyut) ve concrete(somut) klasörleri olmak üzere 2 ana klas
 # Business Katmanı Klasörleri
 Abstract, Business, Business Aspects, Concrete, Constants, DependencyResolvers, Autofac, ValidationRules Klasörleri
 ![BusinessLayer](https://user-images.githubusercontent.com/76704724/115155212-8b1e9b00-a087-11eb-9ace-069370bf12be.PNG) <br/>
-![BusinessLayer(ValidationRules)](https://user-images.githubusercontent.com/76704724/115155340-29aafc00-a088-11eb-9b47-e663c540929f.PNG)
+![BusinessLayer(ValidationRules)](https://user-images.githubusercontent.com/76704724/115155458-b6ee5080-a088-11eb-8913-d3c4e46fa39d.PNG)
