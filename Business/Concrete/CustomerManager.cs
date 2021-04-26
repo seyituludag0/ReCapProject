@@ -49,7 +49,7 @@ namespace Business.Concrete
             Customer customer = _customerDal.Get(c => c.Id == id);
             if (customer == null)
             {
-                return new ErrorDataResult<Customer>(Messages.CustomerGet);
+                return new ErrorDataResult<Customer>(Messages.CustomerGet); 
             }
             return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
         }
