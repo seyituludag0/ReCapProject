@@ -54,14 +54,14 @@ namespace Business.Concrete
             return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
         }
 
-        public IDataResult<Customer> GetCustomerByUserId(int userId)
+        public IDataResult<List<Customer>> GetCustomerByUserId(int userId)
         {
-            Customer customer = _customerDal.Get(c => c.UserId == userId);
-            if (customer == null)
+            List<Customer> customers = _customerDal.GetAll(c => c.UserId == userId);
+            if (customers == null)
             {
-                return new ErrorDataResult<Customer>(Messages.CustomerGetError);
+                return new ErrorDataResult<List<Customer>>(Messages.CustomerGetError);
             }
-            return new SuccessDataResult<Customer>(customer, Messages.CustomerGet);
+            return new SuccessDataResult<List<Customer>>(customers, Messages.CustomerGet);
         }
 
        

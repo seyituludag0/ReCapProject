@@ -61,7 +61,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  BrandId = b.Id,
                                  ColorId = co.Id,
                                  MinFindex = c.MinFindex,
-                                 ImagePath = (from ci in context.CarImages where ci.CarId == c.Id select ci.ImagePath).ToList()
+                                 ImagePath = (from ci in context.CarImages where ci.CarId == c.Id select ci.ImagePath).ToList(),
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
