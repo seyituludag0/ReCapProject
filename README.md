@@ -44,4 +44,18 @@ Tüm kodların birleşip web sayfasına yansıtıldığı katmandır <br/>
 ![WebApiLayer](https://user-images.githubusercontent.com/76704724/115159854-e52a5b00-a09d-11eb-8e2f-c9be0a9b8a79.PNG) <br/>
 ![WebApiLayer01](https://user-images.githubusercontent.com/76704724/115160775-bebaee80-a0a2-11eb-92c6-df6529b895ea.PNG)
 
+## Proje Kurulumu ve Kullanımı
+
+Öncelikle terminale gelin ve aşağıdaki komutları girin :
+
+```bash
+# Repository klonlayın
+$ git clone https://github.com/seyituludag0/ReCapProject.git
+# Klonladığınız klasöre gidin
+$ cd ReCapProject.git
+
+# Bağımlılıkları yükleyin
+$ dotnet restore
+```
+
 
