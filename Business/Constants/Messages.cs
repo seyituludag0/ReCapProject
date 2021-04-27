@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Entities.Dtos;
+using Entities.DTOs;
 
 namespace Business.Constants
 {
@@ -111,5 +112,7 @@ namespace Business.Constants
         public static string BrandImageListed = "Marka resimleri listelendi";
         public static string BrandImageUpdated = "Marka resimleri güncellendi";
         public static string BrandImageAdded = "Marka resmi eklendi";
+        public static string GetErrorBandMessage = "Marka bilgileri getirilemedi";
+        public static string GetBandMessage = "Marka bilgileri getirildi";
     }
 }

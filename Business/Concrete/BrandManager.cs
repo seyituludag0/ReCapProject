@@ -10,6 +10,8 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -49,6 +51,16 @@ namespace Business.Concrete
 
         }
 
+        public IDataResult<List<BrandDetailDto>> GetBrandsDetail()
+        {
+            List<BrandDetailDto> brandDetails = _brandDal.GetBrandsDetail();
+            if (brandDetails == null)
+            {
+                return new ErrorDataResult<List<BrandDetailDto>>(Messages.GetErrorBandMessage);
+            }
+            return new SuccessDataResult<List<BrandDetailDto>>(brandDetails, Messages.GetBandMessage);
+        }
+
         [CacheAspect]
         public IDataResult<Brand> GetBrandById(int brandId)
         {
@@ -59,6 +71,7 @@ namespace Business.Concrete
             }
             return new SuccessDataResult<Brand>(brand, Messages.GetBrandMessage);
         }
+
 
         [SecuredOperation("admin, update")]
         [ValidationAspect(typeof(BrandValidator))]
