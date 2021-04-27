@@ -48,6 +48,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CardDetailManager>().As<ICardDetailService>().SingleInstance();
             builder.RegisterType<EfCardDetail>().As<ICardDetailDal>().SingleInstance();
 
+            builder.RegisterType<BrandImageManager>().As<IBrandImageService>().SingleInstance();
+            builder.RegisterType<EfBrandImageDal>().As<IBrandImageDal>().SingleInstance();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

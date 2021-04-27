@@ -85,7 +85,7 @@ namespace Business.Constants
 
         //CarImages Message
         public static string CarImageListed = "Resimler listelendi";
-        public static string CarImageAdded = "Resim eklendi";
+        public static string CarImageAdded = "Araba resmi eklendi";
         public static string CarImageAddedError = "Resim eklenemedi";
         public static string GetCarImageByIdMessage = "Resim Car Image Id ye göre listelenmiştir";
         public static string CarImageUpdated = "Resim güncellendi";
@@ -106,5 +106,10 @@ namespace Business.Constants
         public static string PaymentSuccessful = "Ödeme başarılı";
         public static string PaymentError = "Ödeme başarısız";
         public static string NoRentACar="Kiralık Araç yok";
+
+        //Brand Images
+        public static string BrandImageListed = "Marka resimleri listelendi";
+        public static string BrandImageUpdated = "Marka resimleri güncellendi";
+        public static string BrandImageAdded = "Marka resmi eklendi";
     }
 }
