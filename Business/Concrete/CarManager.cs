@@ -49,7 +49,6 @@ namespace Business.Concrete
                 return new ErrorDataResult<Car>(Messages.GetErrorCarMessage);
             }
             return new SuccessDataResult<Car>(car, Messages.CarGet);
-
         }
 
         public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
@@ -145,15 +144,6 @@ namespace Business.Concrete
             return null;
         }
 
-        private IResult CheckIfCarNameExists(string name)
-        {
-            var result = _carDal.GetAll(c => c.ModelName == name).Any();
-            if (result)
-            {
-                return new ErrorResult(Messages.CarNameAlreadyExists);
-            }
-            return new SuccessResult();
-        }
 
         public IDataResult<CarDetailDto> GetCarDetail(int carId)
         {

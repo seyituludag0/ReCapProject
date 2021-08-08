@@ -85,9 +85,9 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        private IResult CheckImageLimitExceeded(int carid)
+        private IResult CheckImageLimitExceeded(int carId)
         {
-            var carImagecount = _carImageDal.GetAll(p => p.CarId == carid).Count;
+            var carImagecount = _carImageDal.GetAll(p => p.CarId == carId).Count;
             if (carImagecount >= 5)
             {
                 return new ErrorResult(Messages.ImageLimitError);

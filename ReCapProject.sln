@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIConsole", "UIConsole\UIConsole.csproj", "{5FDAE74D-06A7-4106-AC18-A51325C4414C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{71213ADF-C669-436B-A69D-66AA3EFB2667}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3B4C5268-98D9-40B5-895C-768101053402} = {3B4C5268-98D9-40B5-895C-768101053402}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{3B4C5268-98D9-40B5-895C-768101053402}"
 EndProject

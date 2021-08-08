@@ -34,7 +34,7 @@ namespace Business.Concrete
                                                          p.ExpirationDate == payment.ExpirationDate).Any();
             if (paymentToCheck)
             {
-                return new SuccessResult(Messages.PaymentSuccessful);
+                return new SuccessResult(Messages.PaymentSuccessfull);
             }
             else
             {
